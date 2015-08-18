@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>QA300</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<div class='header'>
+	<%= link_to 'QA300', questions_path, :class => 'header-title' %>
+	<spam class='gray small'> Ask Anything Without Login </spam>
+</div>
+
+<div class='container' >
+	<%= yield %>
+	<hr>
+	<div class='centered gray small'>
+		<%= link_to 'QA300', questions_path %>
+		<br><br>
+	</div>
+</div>
+
+</body>
+</html>

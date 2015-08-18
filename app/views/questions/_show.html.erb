@@ -1,0 +1,22 @@
+<div class='question-div'>
+	<div class='question-block'>
+		<h3>Question</h3>
+		Q#<%= question.id %>.
+		<b><%= question.content %></b><br>
+		<%= link_to ">>>", question_path(question), {:class => 'question_show'} %>
+		<spam class='gray small'><%= question.created_at %></spam>
+	</div>
+	<%= render 'vote/like', :vote => question.vote %>
+</div>
+
+<div class='answer-div'>
+	<h3>Answer</h3>
+	<% question.answers.each do |answer| %>
+		<p>
+			A#<%= answer.id %>.
+			<%= answer.content %><br>
+			<spam class='gray small'><%= answer.created_at %></spam>
+			<%= render 'vote/like', :vote => answer.vote %>
+		</p>
+	<% end %>
+</div>

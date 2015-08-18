@@ -1,0 +1,5 @@
+<%= render 'questions/form' %>
+<% @questions.each do |question| %>
+	<hr>
+	<%= render 'show', {:question => question} %>
+<% end %>

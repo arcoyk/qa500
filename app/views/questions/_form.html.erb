@@ -1,0 +1,8 @@
+<div class='centered form'>
+	<h5 class='gray'>Ask anything</h5>
+	<%= form_for Question.new do |f| %>
+		<%= f.text_area :content, {:maxlength => 300, :class => 'full-width text-area'} %><br>
+		<h3 class='gray' id='letter-left' limit='300'>300</h3>
+		<%= f.submit %>
+	<% end %>
+</div>

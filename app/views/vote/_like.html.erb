@@ -1,0 +1,4 @@
+<%= link_to 'B', like_path({:id => vote.id}), :class => 'like_button', :method => :post, :remote => true %>
+<div id='like_<%= vote.id %>' >
+	<%= vote.like %>
+</div>
