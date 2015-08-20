@@ -14,6 +14,53 @@
  *= require_self
  */
 
+h3 {
+	color: #999;
+}
+
+.right-text {
+	text-align: right;
+}
+
+.half {
+	width: 50%;
+	float: left;
+}
+
+.like-button-set {
+	margin: 10px 0px;
+	font-size: 18px;
+	color: #f0d;
+}
+
+.like-button {
+	display: inline-block;
+	border-radius: 50%;
+	border-style: double;
+	border-color: #fff;
+	border-width: 10px;
+	width: 40px;
+	height: 40px;
+	background: #f0d;
+	transition: all .1s ease;
+    -webkit-transition: all .1s ease;
+}
+
+.like-button:hover {
+    transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+}
+
+.like-button:active {
+    transform: scale(0.4);
+    -webkit-transform: scale(0.4);
+    border-color: #f0d;
+}
+
+.like-num {
+	font-family: 'Open Sans';
+}
+
 .question-div {
 	margin: 50px 0px;
 }
@@ -25,6 +72,12 @@
 
 .answer-div {
 	margin: 30px 0px;
+}
+
+.answer-block {
+	margin: 50px 0px;
+	border-left: solid 5px #eee;
+	padding-left: 10px;
 }
 
 .gray {
@@ -44,14 +97,14 @@
 }
 
 .form {
-	margin-top: 30px;
-	background: #eee;
+	margin-top: 10px;
+	background: #efefef;
 	padding-top: 20px;
 	border-radius: 5px;
 }
 
 .small {
-	font-size: 0.7em;	
+	font-size: 0.8em;	
 }
 
 .header {

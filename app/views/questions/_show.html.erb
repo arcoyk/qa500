@@ -1,22 +1,36 @@
 <div class='question-div'>
 	<div class='question-block'>
-		<h3>Question</h3>
-		Q#<%= question.id %>.
-		<b><%= question.content %></b><br>
-		<%= link_to ">>>", question_path(question), {:class => 'question_show'} %>
-		<spam class='gray small'><%= question.created_at %></spam>
+		<h4>Question</h4>
+		Q<%= question.id %>.
+		<b><%= question.content %></b>
+		<% if not detail %>
+			<%= link_to ">>>", question_path(question), {:class => 'question_show'} %>
+		<% end %>
 	</div>
-	<%= render 'vote/like', :vote => question.vote %>
+	<div>
+		<div>
+			<spam class='gray small'><%= question.created_at %></spam>
+		</div>
+		<div class='centered'>
+			<%= render 'vote/like', :vote => question.vote %>
+		</div>
+	</div>
 </div>
 
 <div class='answer-div'>
-	<h3>Answer</h3>
+	<% if detail %>
+		<h4>Answer</h4>
+	<% end %>
 	<% question.answers.each do |answer| %>
-		<p>
-			A#<%= answer.id %>.
-			<%= answer.content %><br>
+		<div class='answer-block'>
+			A<%= answer.id %>.
+			<b><%= answer.content %></b><br>
 			<spam class='gray small'><%= answer.created_at %></spam>
-			<%= render 'vote/like', :vote => answer.vote %>
-		</p>
+			<% if detail %>
+				<div class='centered'>
+					<%= render 'vote/like', :vote => answer.vote %>
+				</div>
+			<% end %>
+		</div>
 	<% end %>
 </div>
