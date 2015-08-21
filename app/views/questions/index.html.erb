@@ -1,5 +1,4 @@
 <%= render 'input', :type => 'question' %>
-<!-- <%= render 'questions/gad' %> -->
 <% @questions.each do |question| %>
 	<hr>
 	<%= render 'show', {:question => question, :detail => false} %>
