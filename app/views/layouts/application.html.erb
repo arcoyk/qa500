@@ -9,20 +9,20 @@
 </head>
 <body>
 
-<div class='header'>
-	<%= link_to 'QA300', questions_path, :class => 'header-title' %>
-	<spam class='gray small'> Ask Anything Anonymously</spam>
-</div>
-
-<div class='container' >
-	<%= yield %>
-	<hr>
-	<div class='centered gray'>
-		<p>
-			<%= link_to 'QA300', questions_path %>
-		</p>
+	<div class='header'>
+		<%= link_to 'QA300', questions_path, :class => 'header-title' %>
+		<spam class='gray small'> Ask Anything Anonymously</spam>
 	</div>
-</div>
+
+	<div class='container' >
+		<%= yield %>
+		<hr>
+		<div class='centered gray'>
+			<p>
+				<%= link_to 'QA300', questions_path %>
+			</p>
+		</div>
+	</div>
 
 </body>
 </html>
