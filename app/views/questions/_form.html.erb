@@ -1,8 +1,12 @@
 <div class='centered form'>
-	<h5 class='gray'>Ask anything (without Login)</h5>
+	<div class='text-align-left'>
+		<b>Question:</b>
+	</div>
 	<%= form_for Question.new do |f| %>
-		<%= f.text_area :content, {:maxlength => 300, :class => 'full-width text-area'} %><br>
-		<h3 class='gray' id='letter-left' limit='300'>300</h3>
-		<%= f.submit %>
+		<%= f.text_area :content, {:maxlength => 300, :class => 'full-width text-area'} %>
+		<%= f.submit 'ASK', :class => 'button-primary' %>
+		<div class='text-align-right gray'>
+			<spam id='letter-left' limit='300'>300</spam>
+		</div>
 	<% end %>
 </div>

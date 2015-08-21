@@ -1,9 +1,9 @@
 <div class='centered form'>
-	<h5 class='gray'>Answer (without Login)</h5>
+	<b>Answer (without Login)</b>
 	<%= form_for Answer.new do |f| %>
-		<%= f.text_area :content, {:maxlength => 100, :class => 'full-width text-area'} %><br>
+		<spam class='letter-left' limit='100'>100</spam>
+		<%= f.text_area :content, {:maxlength => 100, :class => 'full-width text-area'} %>
 		<%= f.text_field :question_id, :value => question.id, :hidden => true %>
-		<h3 class='gray' id='letter-left' limit='100'>100</h3>
 		<%= f.submit 'submit answer' %>
 	<% end %>
 </div>
