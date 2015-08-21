@@ -18,6 +18,14 @@ h3 {
 	color: #999;
 }
 
+.question-input {
+	height: 12em;
+}
+
+.answer-input {
+	height: 3em;
+}
+
 .text-align-left {
 	text-align: left;
 }
@@ -94,10 +102,6 @@ h3 {
 
 .full-width {
 	width: 100%;
-}
-
-.text-area {
-	height: 11em;
 }
 
 .form {

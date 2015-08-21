@@ -1,0 +1,27 @@
+<div class='centered form'>
+	<div class='text-align-left'>
+		<% if type == 'question' %>
+			<b>Question:</b>
+		<% elsif type == 'answer' %>
+			<b>Answer: </b>
+		<% end %>
+	</div>
+	<% if type == 'question' %>
+		<%= form_for Question.new do |f| %>
+			<%= f.text_area :content, {:maxlength => 300, :class => 'full-width text-area question-input'} %>
+			<%= f.submit 'ASK', :class => 'button-primary' %>
+			<div class='text-align-right gray'>
+				<spam id='letter-left' limit='300'>300</spam>
+			</div>
+		<% end %>
+	<% elsif type == 'answer' %>
+		<%= form_for Answer.new do |f| %>
+			<%= f.text_area :content, {:maxlength =>50, :class => 'full-width text-area answer-input'} %>
+			<%= f.text_field :question_id, :value => @question.id, :hidden => true %>
+			<%= f.submit 'Say', :class => 'button-primary' %>
+			<div class='text-align-right gray'>
+				<spam id='letter-left' limit='50'>50</spam>
+			</div>
+		<% end %>
+	<% end %>
+</div>
