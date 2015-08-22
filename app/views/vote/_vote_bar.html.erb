@@ -1,0 +1,8 @@
+<% @yes_rate = 100 * @vote.yes / (@vote.yes + @vote.no) %>
+<% @no_rate = 100 * @vote.no / (@vote.yes + @vote.no) %>
+<div class='vote-bar'>
+	<div class='yes-bar' style='width:<%= @yes_rate %>%'>
+	</div>
+	<div class='no-bar' style='width:<%= @no_rate %>%'>
+	</div>
+</div>

@@ -1,5 +1,5 @@
-<%= render 'input', :type => 'question' %>
+<%= render 'input', :@type => 'question' %>
 <% @questions.each do |question| %>
 	<hr>
-	<%= render 'show', {:question => question, :detail => false} %>
+	<%= render 'show', {:@question => question, :@detail => false} %>
 <% end %>

@@ -1,7 +1,7 @@
-<div class='like-button-set'>
-	<%= link_to '', like_path({:id => vote.id}), :class => 'like-button', :method => :post, :remote => true %>
+<div class='vote-button-set'>
+	<%= link_to '', like_path({:id => vote.id}), :class => 'vote-button yes-button', :method => :post, :remote => true %>
 	<br>
-	<b class='like-num' id='like-<%= vote.id %>' >
+	<b class='num' id='like-<%= vote.id %>' >
 		<%= vote.like %>
 	</b>
 	PUSH

@@ -1,23 +1,32 @@
 <div class='centered form'>
 	<div class='text-align-left'>
-		<% if type == 'question' %>
-			<b>Question:</b>
-		<% elsif type == 'answer' %>
-			<b>Answer: </b>
+		<% if @type == 'question' %>
+			<b>Condition:</b>
+		<% elsif @type == 'answer' %>
+			<b>Why: </b>
 		<% end %>
 	</div>
-	<% if type == 'question' %>
+	<% if @type == 'question' %>
 		<%= form_for Question.new do |f| %>
-			<%= f.text_area :content, {:maxlength => 300, :class => 'full-width text-area question-input'} %>
+			<%= f.text_area :content, {:maxlength => 300, :class => 'full-width text-area question-input', :placeholder => "I'm a collage student. Male. My girlfriend hit me up to a party tonight, while I have to study for next exam."} %>
+			<div class='text-align-left'>
+				<b>Option1:</b>
+				<%= f.text_field :yes_option, {:maxlength => 20, :class => 'full-width', :placeholder => 'Go to the party'} %>
+			</div>
+			<div class='text-align-left'>
+				<b>Option2:</b>
+				<%= f.text_field :no_option, {:maxlength => 20, :class => 'full-width', :placeholder => 'Stay at home'} %>
+			</div>
 			<%= f.submit 'ASK', :class => 'button-primary' %>
 			<div class='text-align-right gray'>
 				<spam id='letter-left' limit='300'>300</spam>
 			</div>
 		<% end %>
-	<% elsif type == 'answer' %>
+	<% elsif @type == 'answer' %>
 		<%= form_for Answer.new do |f| %>
 			<%= f.text_area :content, {:maxlength =>50, :class => 'full-width text-area answer-input'} %>
 			<%= f.text_field :question_id, :value => @question.id, :hidden => true %>
+			<%= f.text_field :anstype, :hidden => true, :id => 'answer-input-anstype' %>
 			<%= f.submit 'Say', :class => 'button-primary' %>
 			<div class='text-align-right gray'>
 				<spam id='letter-left' limit='50'>50</spam>

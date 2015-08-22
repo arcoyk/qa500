@@ -4,6 +4,8 @@ Rails.application.routes.draw do
 
   post 'like/:id', :to => 'vote#like', :as => :like
 
+  post 'yesno/:id/:yesno', :to => 'vote#yesno', :as => :yesno
+
   resources :questions
   resources :answers
   resources :votes

@@ -1,0 +1,25 @@
+<div class='yesno-button-set'>
+	<div class='centered half yes-text'>
+		<%= link_to '', yesno_path({:id => @question.vote.id, :yesno => :yes}), :class => 'vote-button yes-button', :method => :post, :remote => true%><br>
+		Option1<br>
+		<spam class='display-none display-<%= @question.id %>'>
+			<b class='num' id='yes-<%= @question.vote.id %>' >
+				<%= @question.vote.yes %>
+			</b>
+			VOTE
+		</spam>
+	</div>
+	<div class='centered half no-text'>
+		<%= link_to '', yesno_path({:id => @question.vote.id, :yesno => :no}), :class => 'vote-button no-button', :method => :post, :remote => true %><br>
+		Option2<br>
+		<spam class='display-none display-<%= @question.id %>'>
+			<b class='num' id='no-<%= @question.vote.id %>' >
+				<%= @question.vote.no %>
+			</b>
+			VOTE
+		</spam>
+	</div>
+	<spam class='display-none display-<%= @question.id%>'>
+		<%= render 'vote/vote_bar', :@vote => @question.vote %>
+	</spam>
+</div>

@@ -4,7 +4,9 @@ class Vote < ActiveRecord::Base
 	belongs_to :answer
 	private
   	def set_default_value
-  		self.like ||= 0 
+  		self.like ||= 0
+  		self.yes ||= 0
+  		self.no ||= 0
   	end
 end
 

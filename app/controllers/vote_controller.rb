@@ -7,4 +7,23 @@ class VoteController < ApplicationController
       format.js {@d}
     end
   end
+
+  def yesno
+  	@d = Vote.find(params[:id])
+  	@yesno = params[:yesno]
+  	if @yesno == 'yes'
+  		@d.yes += 1
+  	elsif @yesno == 'no'
+  		@d.no += 1
+  	end
+  	@d.save
+  	@params = params
+  	@params[:yescount] = @d.yes
+  	@params[:nocount] = @d.no
+  	@params[:question_id] = @d.question_id
+  	@params[:answer_id] = @d.answer_id
+	respond_to do |format|
+	    format.js { @params }
+	 end
+  end
 end
