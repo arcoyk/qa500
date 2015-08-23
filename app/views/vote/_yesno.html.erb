@@ -1,5 +1,10 @@
-<% @yes_rate = 100 * @question.vote.yes / (@question.vote.yes + @question.vote.no) %>
-<% @no_rate = 100 * @question.vote.no / (@question.vote.yes + @question.vote.no) %>
+<% if @question.vote.yes + @question.vote.no == 0 %>
+	<% @yes_rate = 50 %>
+	<% @no_rate = 50 %>
+<% else %>
+	<% @yes_rate = 100 * @question.vote.yes / (@question.vote.yes + @question.vote.no) %>
+	<% @no_rate = 100 * @question.vote.no / (@question.vote.yes + @question.vote.no) %>
+<% end %>
 <div class='yesno-button-set'>
 	<div class='centered half yes-text'>
 		<% if @yesno != nil %>

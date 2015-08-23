@@ -10,7 +10,7 @@ class AnswersController < ApplicationController
   	answer = Answer.create(answer_params)
   	question.answers.push answer
   	question.save
-  	redirect_to :back
+  	redirect_to question_with_yesno_path({:id => question.id, :yesno => answer.anstype})
   end
 
   def like
