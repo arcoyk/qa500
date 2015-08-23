@@ -1,8 +1,7 @@
 var yesno = "<%= @params[:yesno] %>";
-if (yesno == "yes") {
-	$('#yes-<%= @params[:id] %>').text('<%= params[:yescount] %>');
-} else if (yesno == "no") {
-	$('#no-<%= @params[:id] %>').text('<%= params[:nocount] %>');	
-}
-$('#answer-input-anstype').val(yesno);
-$('.display-<%= @params[:question_id] %>').css('display', 'block');
+var id = "<%= @params[:question_id] %>";
+$('.display-none-' + id).css('display', 'block');
+$('.display-block-' + id).css('display', 'none');
+$('#vote-sum-' + id).text('<%= @params[:vote_count] %>');
+$('#see-why-' + id).attr('action', '/questions/' + id + '/' + yesno);
+toggle_switch(yesno)

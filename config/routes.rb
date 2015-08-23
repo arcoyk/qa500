@@ -6,6 +6,8 @@ Rails.application.routes.draw do
 
   post 'yesno/:id/:yesno', :to => 'vote#yesno', :as => :yesno
 
+  get 'questions/:id/:yesno', :to => 'questions#show_with_yesno', :as => :question_with_yesno
+
   resources :questions
   resources :answers
   resources :votes

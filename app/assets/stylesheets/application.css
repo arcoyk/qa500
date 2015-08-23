@@ -18,21 +18,78 @@ h3 {
 	color: #999;
 }
 
+h2 {
+	line-height: 30px
+}
+
+.main {
+	margin: 0px 10px;
+}
+
+.float-right {
+	float: right;
+}
+
+.float-left {
+	float: left;
+}
+
+.width-300 {
+	width: 80px;
+	float: left;
+}
+
+.display-inline-block {
+	display: inline-block;
+	float:left;
+}
+
+.toggle-switch {
+	padding: 5px 5px;
+	width: auto;
+	float: left;
+}
+
+.toggle-out {
+	height: 16px;
+	width: 29px;
+	background: #ddd;
+	border-radius: 8px;
+}
+
+.toggle-in {
+	height: 14px;
+	width: 15px;
+	background: #fff;
+	border-radius: 8px;
+	border: solid #ccc 1px;
+	font-family: "Arial";
+}
+
+.yes {
+	background: #0e0;
+}
+
+.no {
+	background: #e00;
+}
+
 .vote-bar {
-	height: 10px;
 	width: 100%;
+}
+
+.yes-or-no-bar {
+	float: left;
+	height: 20px;
+	color: #fff;
 }
 
 .yes-bar {
 	background: #0e0;
-	float: left;
-	height: 5px;
 }
 
 .no-bar {
 	background: #e00;
-	float: left;
-	height: 5px;
 }
 
 .display-none {
@@ -57,7 +114,7 @@ h3 {
 }
 
 .question-input {
-	height: 12em;
+	height: 3em;
 }
 
 .answer-input {
@@ -75,6 +132,11 @@ h3 {
 .half {
 	width: 50%;
 	float: left;
+}
+
+.auto {
+	height: auto;
+	width: auto;
 }
 
 .like-button-set {
@@ -168,13 +230,15 @@ h3 {
 }
 
 .header {
-	height: 50px;
+	line-height: 10px;
+	height: 60px;
 	background: #fff;
 	text-align: center;
 	border-bottom: solid #eee 1px;
 }
 
 .header-title {
+	line-height: 32px;
 	font-size: 2em;
 	font-family: 'HelveticaNeue-Light';
 }

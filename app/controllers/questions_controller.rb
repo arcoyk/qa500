@@ -4,8 +4,13 @@ class QuestionsController < ApplicationController
   	@question = Question.new
   end
 
+  def show_with_yesno
+    redirect_to controller: 'questions', action: 'show', params: params
+  end
+
   def show
-  	@question = Question.find(params[:id])
+  	@yesno = params[:yesno]
+    @question = Question.find(params[:id])
   end
 
   def create

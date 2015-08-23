@@ -28,3 +28,40 @@ $(function(){
 		$("#letter-left").text(limit - this.value.length);
 	});
 });
+
+$(function(){
+	$(".toggle-switch").click(function() {
+		var anstype = $("#answer-input-anstype");
+		if (anstype.val() == 'no') {
+			$(".toggle-in").css("float", "left");
+			$("#why-yes-or-no").removeClass("no-text");
+			$("#why-yes-or-no").addClass("yes-text");
+			$("#why-yes-or-no").text("YES?");
+			anstype.val('yes');
+		}else {
+			$(".toggle-in").css("float", "right");
+			$("#why-yes-or-no").removeClass("yes-text");
+			$("#why-yes-or-no").addClass("no-text");
+			$("#why-yes-or-no").text("NO?");
+			anstype.val('no');
+		}
+	});
+});
+
+function toggle_switch(yesno) {
+	var anstype = $("#answer-input-anstype");
+	if (yesno == 'yes') {
+		$(".toggle-in").css("float", "left");
+		$("#why-yes-or-no").removeClass("no-text");
+		$("#why-yes-or-no").addClass("yes-text");
+		$("#why-yes-or-no").text("YES?");
+		anstype.val('yes');
+	} else {
+		$(".toggle-in").css("float", "right");
+		$("#why-yes-or-no").removeClass("yes-text");
+		$("#why-yes-or-no").addClass("no-text");
+		$("#why-yes-or-no").text("NO?");
+		anstype.val('no');
+	}
+}
+

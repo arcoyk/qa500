@@ -18,8 +18,7 @@ class VoteController < ApplicationController
   	end
   	@d.save
   	@params = params
-  	@params[:yescount] = @d.yes
-  	@params[:nocount] = @d.no
+  	@params[:vote_count] = @d.yes + @d.no
   	@params[:question_id] = @d.question_id
   	@params[:answer_id] = @d.answer_id
 	respond_to do |format|

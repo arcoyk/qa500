@@ -1,25 +1,49 @@
+<% @yes_rate = 100 * @question.vote.yes / (@question.vote.yes + @question.vote.no) %>
+<% @no_rate = 100 * @question.vote.no / (@question.vote.yes + @question.vote.no) %>
 <div class='yesno-button-set'>
 	<div class='centered half yes-text'>
-		<%= link_to '', yesno_path({:id => @question.vote.id, :yesno => :yes}), :class => 'vote-button yes-button', :method => :post, :remote => true%><br>
-		Option1<br>
-		<spam class='display-none display-<%= @question.id %>'>
-			<b class='num' id='yes-<%= @question.vote.id %>' >
-				<%= @question.vote.yes %>
-			</b>
-			VOTE
+		<% if @yesno != nil %>
+			<spam class='display-none-<%= @question.id %>'>
+		<% else %>
+			<spam class='display-none display-none-<%= @question.id %>'>
+		<% end %>
+			<h2 class='num' id='yes-<%= @question.vote.id %>' >
+				<b><%= @yes_rate %>%</b>
+			</h2>
 		</spam>
+		<% if @yesno != nil %>
+			<spam class='display-none display-block-<%= @question.id %>'>
+		<% else %>
+			<spam class='display-block-<%= @question.id %>'>
+		<% end %>
+			<%= link_to '', yesno_path({:id => @question.vote.id, :yesno => :yes}), :class => 'vote-button yes-button ', :method => :post, :remote => true%><br>
+		</spam>
+		<h2 class='yes-text'><b>YES</b></h2>
 	</div>
 	<div class='centered half no-text'>
-		<%= link_to '', yesno_path({:id => @question.vote.id, :yesno => :no}), :class => 'vote-button no-button', :method => :post, :remote => true %><br>
-		Option2<br>
-		<spam class='display-none display-<%= @question.id %>'>
-			<b class='num' id='no-<%= @question.vote.id %>' >
-				<%= @question.vote.no %>
-			</b>
-			VOTE
+		<% if @yesno != nil %>
+			<spam class='display-none-<%= @question.id %>'>
+		<% else %>
+			<spam class='display-none display-none-<%= @question.id %>'>
+		<% end %>
+			<h2 class='num' id='no-<%= @question.vote.id %>' >
+				<b><%= @no_rate %>%</b>
+			</h2>
 		</spam>
+		<% if @yesno != nil %>
+			<spam class='display-none display-block-<%= @question.id %>'>
+		<% else %>
+			<spam class='display-block-<%= @question.id %>'>
+		<% end %>
+			<%= link_to '', yesno_path({:id => @question.vote.id, :yesno => :no}), :class => 'vote-button no-button ', :method => :post, :remote => true %><br>
+		</spam>
+		<h2 class='no-text'><b>NO</b></h2>
 	</div>
-	<spam class='display-none display-<%= @question.id%>'>
-		<%= render 'vote/vote_bar', :@vote => @question.vote %>
-	</spam>
+	<div class='gray centered'>
+		(
+		<spam id='vote-sum-<%= @question.id %>'>
+			<%= @question.vote.yes + @question.vote.no %>
+		</spam>
+		votes)
+	</div>
 </div>

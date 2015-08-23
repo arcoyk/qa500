@@ -1,29 +1,29 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>QA300</title>
+  <title>ISSUE300</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
   <meta name="viewport" content="width=device-width">
 </head>
 <body>
-
 	<div class='header'>
-		<%= link_to 'QA300', questions_path, :class => 'header-title' %>
-		<spam class='gray small'> Ask Anything Anonymously</spam>
+		<%= link_to 'ISSUE300', questions_path, :class => 'header-title' %>
+		<br>
+		<spam class='gray small'> <b>SETTLE THINGS DOWN</b> </spam>
 	</div>
 
-	<div class='container' >
+	<div class='main' >
 		<%= yield %>
 		<hr>
+		<%= render 'questions/gana' %>
+		<%= render 'questions/gad' %>
 		<div class='centered gray'>
 			<p>
-				<%= link_to 'QA300', questions_path %>
+				<%= link_to 'ISSUE300', questions_path %>
 			</p>
 		</div>
 	</div>
 </body>
-<%= render 'questions/gana' %>
-<%= render 'questions/gad' %>
 </html>
