@@ -1,6 +1,5 @@
 class QuestionsController < ApplicationController
   def index
-  	qinit
   	@questions = Question.all
   	@question = Question.new
   end
